@@ -1,0 +1,9 @@
+bazel_dep(name = "foo", version = "0.0.0")
+archive_override(
+    module_name = "foo",
+    # Add simple patch that adds a MODULE.bazel.
+    patches = ["//:foo.patch"],
+    integrity = "sha256-JM4e+4XvUm3EvrB78t+OW+hzsYrukyV6Iu0fYtVeyI8=",
+    strip_prefix = "hellogitworld-RELEASE_1.1",
+    urls = ["https://github.com/githubtraining/hellogitworld/archive/refs/tags/RELEASE_1.1.tar.gz"],
+)
